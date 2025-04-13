@@ -1,0 +1,48 @@
+﻿@model proyecto_prueba_L5.Models.AgregarClienteViewModel
+
+@{
+    ViewData["Title"] = "Agregar Cliente";
+}
+
+<h2>Agregar Cliente</h2>
+
+<form asp-action="Agregar" method="post">
+    <div>
+        <label asp-for="Nombre"></label>
+        <input asp-for="Nombre" />
+        <span asp-validation-for="Nombre" style="color:red"></span>
+    </div>
+
+    <div>
+        <label asp-for="Apellido"></label>
+        <input asp-for="Apellido" />
+        <span asp-validation-for="Apellido" style="color:red"></span>
+    </div>
+
+    <div>
+        <label asp-for="Dni"></label>
+        <input asp-for="Dni" />
+        <span asp-validation-for="Dni" style="color:red"></span>
+    </div>
+
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email" style="color:red"></span>
+    </div>
+
+    <div>
+        <label asp-for="Password"></label>
+        <input asp-for="Password" type="password" />
+        <span asp-validation-for="Password" style="color:red"></span>
+    </div>
+
+    <button type="submit">Guardar</button>
+</form>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
